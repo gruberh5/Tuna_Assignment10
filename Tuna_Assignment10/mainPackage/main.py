@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 
 # Name: Team TUNA (Henry Gruber, Lucas Ransick)
-# email:  {required}
+# email:  gruberhw@mail.uc.edu & ransiclg@mail.uc.edu
 # Assignment Number: Assignment 10 
 # Due Date:   11/14/2024
 # Course #/Section:   IS 4010 - 001
@@ -21,8 +21,8 @@ def TriviaAPI():
     for question in parsed_json['results']:
         print(question['question'])
         print(question['correct_answer'])
-    
+        df = pd.DataFrame(parsed_json)
+        df.to_csv('trvia.csv', index=False)
 
     
 TriviaAPI()
-
